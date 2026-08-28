@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Public_Sans, Urbanist, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/footer";
 import NewsLetter from "@/components/common/news-letter";
@@ -8,8 +8,18 @@ import ScrollToTop from "@/components/common/scroll-to-top";
 import { QuickViewProvider } from "@/context/quick-view-context";
 import NextTopLoader from "nextjs-toploader";
 
-const inter = Inter({
-  variable: "--font-inter",
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
+  subsets: ["latin"],
+});
+
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
+  subsets: ["latin"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -73,7 +83,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/icons/hugeicons/hgi-stroke-rounded.css" />
       </head>
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${publicSans.variable} ${urbanist.variable} ${dmSans.variable} antialiased`}
       >
         <NextTopLoader color="#ffc107" showSpinner={false} />
         <QuickViewProvider>

@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Public_Sans, Urbanist } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-public-sans",
+  display: "swap",
+});
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  variable: "--font-urbanist",
   display: "swap",
 });
 
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${dmSans.variable} ${publicSans.variable} ${urbanist.variable}  antialiased`}
       >
         {children}
         <Toaster
